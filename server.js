@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const PORT = process.env.PORT || 3030;
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXECEPTION! - Shutting down... 💀');
@@ -28,9 +29,9 @@ mongoose
 
 // console.log(process.env);
 
-const port = process.env.PORT;
-const server = app.listen(port, () => {
-  console.log(`Running on port ${port}...`);
+// const port = process.env.PORT;
+const server = app.listen(PORT, () => {
+  console.log(`Running on port ${PORT}...`);
 });
 
 process.on('unhandledRejection', (err) => {
